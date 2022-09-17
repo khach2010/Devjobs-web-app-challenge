@@ -1,0 +1,291 @@
+@use './mixin.scss' as mixin;
+
+// $violet:  #5964E0;
+// $lightViolet: #939BF4;
+// $veryDarkBlue:  #19202D;
+// $midnight:  #121721;
+// $white:  #ffffff;
+// $lightgrey:  #F4F6F8;
+// $gray: #9DAEC2;
+// $darkgray: #6E8098;
+
+.detailPage {
+  max-width: 730px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  .detailPageInfo {
+    transform: translateY(-24px);
+    width: 100%;
+    height: 205px;
+    text-align: center;
+    position: relative;
+    .detailPageInfo-logo {
+      position: absolute;
+      left: 50%;
+      top: -24px;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      padding: 13px 5px;
+      object-fit: contain;
+      margin-bottom: 24px;
+    }
+    .detailPageInfo-info {
+      width: 100%;
+      height: 100%;
+      padding: 46px 0;
+      background-color: mixin.$white;
+      border-radius: 6px;
+      h3 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+        color: mixin.$veryDarkBlue;
+        margin-bottom: 10px;
+      }
+      p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: mixin.$darkgray;
+        margin-bottom: 27px;
+      }
+      button {
+        width: 147px;
+        height: 48px;
+        color: mixin.$violet;
+        background-color: rgba(mixin.$violet, $alpha: .1);
+        mix-blend-mode: normal;
+        border: none;
+        border-radius: 5px;
+        font-family: mixin.$font-stack-1;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        cursor: pointer;
+      }
+    }
+  } // end detailPageInfo
+
+  .detailPageInfo.desktop {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    .detailPageInfo-logo {
+      position: absolute;
+      left: 70px;
+      top: 0;
+      height: 100%;
+      width: 140px;
+      border-radius: 0 0 0 6px;
+      padding: 0 29px;
+      object-fit: contain;
+    }
+    .detailPageInfo-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 40px;
+      div {
+        position: absolute;
+        left: 180px;
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  //////// ----- //////////
+  .detailPageContent.desktop {
+    position: relative;
+    .detailPageContent-applyButton {
+      button {
+        position: absolute;
+        width: 141px;
+        right: 48px;
+        top: 58px;
+        cursor: pointer;
+      }
+    }
+  } // end detailPageContent.desktop
+
+  .detailPageContent {
+    width: 100%;
+    height: 100%;
+    padding: 46px 24px 24px 24px;
+    margin-bottom: 64px;
+    background-color: mixin.$white;
+    border-radius: 6px;
+    .detailPageContent-header {
+      margin-bottom: 50px;
+      .detailPageContent-header_jobTime {
+        display: flex;
+        p {
+          margin-right: 12px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 20px;
+          color: mixin.$darkgray;
+          margin-bottom: 7px;
+        }
+      }
+      h3 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+        color: mixin.$veryDarkBlue;
+        margin-bottom: 10px;
+        }
+      p {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: mixin.$violet;
+      }
+    }
+    .detailPageContent-applyButton {
+      margin-bottom: 32px;
+      button {
+        width: 100%;
+        height: 48px;
+        color: mixin.$white;
+        background-color: mixin.$violet;
+        border: none;
+        border-radius: 5px;
+        font-family: mixin.$font-stack-1;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+    .detailPageContent-description {
+      margin-bottom: 40px;
+      p {
+        font-family: mixin.$font-stack-1;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: #6E8098;
+      }
+    }
+    .detailPageContent-requirement, .detailPageContent-whatyouwilldo {
+      margin-bottom: 40px;
+      h4 {
+        font-size: 20px;
+        line-height: 25px; 
+        color:  mixin.$veryDarkBlue;
+        margin-bottom: 23px;
+      }
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: mixin.$darkgray;
+        margin-bottom: 23px;
+      }
+      ul, ol {
+        li {
+          color: mixin.$violet;
+          margin-left: 12px;
+          p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  } // end detailPageContent
+
+  //////// ------ /////////
+  .detailPageFooter {
+    width: 100%;
+    height: 96px;
+    background-color: mixin.$white;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    .detailPageFooter-title {
+      display: none;
+    }
+    button {
+      width: 100%;
+      height: 48px;
+      color: mixin.$white;
+      background-color: mixin.$violet;
+      border: none;
+      border-radius: 5px;
+      font-family: mixin.$font-stack-1;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+  } // end detailPageFooter
+
+  .detailPageFooter.desktop {
+    justify-content: space-between;
+    .detailPageFooter-title {
+      display: block;
+      h3 {
+        margin-bottom: 12px;
+      }
+    }
+    button {
+      width: 141px;
+    }
+  } // end detailPageFooter.Desktop
+} // end detail page
+
+.detailPage.dark {
+  .detailPageInfo {
+    .detailPageInfo-info {
+      background-color: mixin.$veryDarkBlue;
+      h3 {
+        color: mixin.$white;
+      }
+      button {
+        color: mixin.$white;
+        mix-blend-mode: normal;
+        background-color: rgba(mixin.$white, $alpha: .1);
+        
+      }
+    }
+  }
+  .detailPageContent {
+    background-color: mixin.$veryDarkBlue;
+    h3 {
+      color: mixin.$white;
+    }
+    h4 {
+      color: mixin.$white;
+    }
+  }
+  .detailPageFooter {
+    background-color: mixin.$veryDarkBlue;
+    .detailPageFooter-title {
+      h3 {
+       color: mixin.$white; 
+      }
+      p {
+       color: mixin.$darkgray; 
+      }
+    }
+  } // end detailPageFooter
+
+} // end detail page.dark
+

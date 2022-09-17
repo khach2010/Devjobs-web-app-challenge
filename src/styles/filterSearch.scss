@@ -1,0 +1,371 @@
+@use './mixin.scss' as mixin;
+
+// $violet:  #5964E0;
+// $lightViolet: #939BF4;
+// $veryDarkBlue:  #19202D;
+// $midnight:  #121721;
+// $white:  #ffffff;
+// $lightgrey:  #F4F6F8;
+// $gray: #9DAEC2;
+// $darkgray: #6E8098;
+
+.react-responsive-modal-modal {
+  width: 90vw;
+  height: 217px;
+  border-radius: 6px;
+  padding: 0 !important;
+  .filterSearch-location {
+    width: 100%;
+    height: 72px;
+    border-bottom: 1px solid rgba($color: mixin.$darkgray, $alpha: .2);
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    svg {
+      margin-right: 16px;
+    }
+    input {
+      height: 100%;
+      border: none;
+      font-family: mixin.$font-stack-1;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: mixin.$veryDarkBlue;
+      mix-blend-mode: normal;
+      opacity: 0.5;
+      background-color: transparent;
+      &:focus {
+        outline: none;
+      }
+    }
+    
+  }
+  .filterSearch-location.dark {
+    background-color: mixin.$veryDarkBlue;
+  }
+  .special {
+    height: 145px;
+  }
+  .special.dark {
+    background-color: mixin.$veryDarkBlue;
+  }
+  .filterSearch-fulltime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    cursor: pointer;
+   /* The container */
+    .filterSearch-fulltime-container {
+      display: block;
+      position: relative;
+      padding-left: 45px;
+      font-family: mixin.$font-stack-1;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      color: mixin.$veryDarkBlue;
+      cursor: pointer;
+      /* Hide the browser's default checkbox */
+      input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      }
+    }
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: rgba($color: mixin.$veryDarkBlue, $alpha: 0.1);
+      border-radius: 3px;
+    }
+    /* On mouse-over, add a lightViolet background color */
+    .filterSearch-fulltime-container:hover input ~ .checkmark {
+      background-color: mixin.$lightViolet;
+    }
+    /* When the checkbox is checked, add a violet background */
+    .filterSearch-fulltime-container input:checked ~ .checkmark {
+      background-color: mixin.$violet;
+    }
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    /* Show the checkmark when checked */
+    .filterSearch-fulltime-container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    /* Style the checkmark/indicator */
+    .filterSearch-fulltime-container .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    button {
+      width: 123px;
+      height: 48px;
+      background: mixin.$violet;
+      color: mixin.$white;
+      border-radius: 5px;
+      border: none;
+      font-family: mixin.$font-stack-1;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      margin: 0 30px 0 0;
+      transition: all .25s;
+      &:hover {
+        background-color: mixin.$lightViolet;
+        transform: scale(.98);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .filterSearch-fulltime.dark {
+    background-color: mixin.$veryDarkBlue;
+    .filterSearch-fulltime-container {
+      cursor: pointer;
+      color: mixin.$white;
+    }
+      /* Create a custom checkbox */
+      .checkmark {
+        background-color: rgba($color: mixin.$white, $alpha: 0.1);
+      }
+  }
+  button {
+    width: calc(100% - 48px);
+    height: 48px;
+    margin-left: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: mixin.$violet;
+    color: mixin.$white;
+    font-family: mixin.$font-stack-1;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .react-responsive-modal-closeButton {
+    display: none;
+  }
+}
+
+.filterSearch {
+  max-width: 1150px;
+  margin: 0 auto;
+  height: 80px; 
+  background-color: mixin.$white; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 6px;
+  margin-bottom: 45px;
+  transform: translateY(-50%);
+  div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    input {
+      border: none;
+      width: 100%;
+      height: 100%;
+      margin-left: 18px;
+      font-family: mixin.$font-stack-1;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: mixin.$veryDarkBlue;
+      background-color: transparent;
+      mix-blend-mode: normal;
+      opacity: 0.5;
+    }
+    input:focus, input:active {
+      outline: none;
+    }
+  }
+  .filterSearch-title {
+    svg {
+      margin: 0 0 0 30px;
+    }
+  }
+  .filterSearch-location {
+    border-left: 1px solid rgba($color: mixin.$gray, $alpha: .2);
+    border-right:  1px solid rgba($color: mixin.$gray, $alpha: .2);
+    svg {
+      margin: 0 0 0 30px;
+    }
+  }
+
+  .filterSearch-fulltime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    cursor: pointer;
+   /* The container */
+    .filterSearch-fulltime-container {
+      display: block;
+      position: relative;
+      padding-left: 45px;
+      font-family: mixin.$font-stack-1;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      color: mixin.$veryDarkBlue;
+      cursor: pointer;
+      /* Hide the browser's default checkbox */
+      input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      }
+    }
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: mixin.$lightgrey;
+      border-radius: 3px;
+    }
+    /* On mouse-over, add a grey background color */
+    .filterSearch-fulltime-container:hover input ~ .checkmark {
+      background-color: mixin.$lightViolet;
+    }
+    /* When the checkbox is checked, add a violet background */
+    .filterSearch-fulltime-container input:checked ~ .checkmark {
+      background-color: mixin.$violet;
+    }
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    /* Show the checkmark when checked */
+    .filterSearch-fulltime-container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    /* Style the checkmark/indicator */
+    .filterSearch-fulltime-container .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    button {
+      width: 123px;
+      height: 48px;
+      background: mixin.$violet;
+      color: mixin.$white;
+      border-radius: 5px;
+      border: none;
+      font-family: mixin.$font-stack-1;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      margin: 0 30px 0 0;
+      transition: all .25s;
+      &:hover {
+        background-color: mixin.$lightViolet;
+        transform: scale(.98);
+        cursor: pointer;
+      }
+    }
+  }
+  
+}
+.filterSearch.dark {
+  background-color: mixin.$veryDarkBlue;
+  transition: all .4s;
+  .filterSearch-title {
+    input {
+      background-color: transparent;
+      color: mixin.$white;
+    }
+  }
+  .filterSearch-fulltime-container {
+    color: mixin.$white;
+    .checkmark {
+      background: mixin.$white;
+      mix-blend-mode: normal;
+    }
+  }
+ 
+}
+
+
+@media (max-width: 374.98px) { 
+}
+
+@media (max-width: 640px){
+  .filterSearch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    .filterSearch-title {
+      padding: 16px;
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 767.98px) { 
+}
+
+@media (max-width: 991.98px) {
+}
+
+@media (max-width: 1199.98px) {
+  .filterSearch {
+    max-width: 86%;
+  }
+}

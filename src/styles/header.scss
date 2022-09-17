@@ -1,0 +1,155 @@
+@use './mixin.scss' as mixin;
+
+// $violet:  #5964E0;
+// $lightViolet: #939BF4;
+// $veryDarkBlue:  #19202D;
+// $midnight:  #121721;
+// $white:  #ffffff;
+// $lightgrey:  #F4F6F8;
+// $gray: #9DAEC2;
+// $darkgray: #6E8098;
+
+a:link {
+  text-decoration: none;
+  color: mixin.$white;
+}
+a:visited {
+  text-decoration: none;
+  color: mixin.$white;
+}
+.header-logo {
+  font-family: mixin.$font-stack-1;
+}
+.header {
+  width: 100%;
+  height: 136px;
+  padding-top: 3%;
+  background-image: url('../../public/assets/mobile/bg-pattern-header.svg');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  color: mixin.$white;
+  .headerContainer {
+    margin: 0 auto;
+    max-width: 1150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+} // end header
+
+.header.dark {
+  background-color: black;
+}
+
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 112px;
+} 
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: mixin.$white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 5px;
+  bottom: 5px;
+  background-color: mixin.$violet;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: mixin.$white;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px mixin.$white;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-color: mixin.$lightViolet;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+@media (max-width: 374.98px) { 
+
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 7% 7%;   
+  }
+}
+
+@media (max-width: 767.98px) { 
+  .header {
+    background-image: url('../../public/assets/tablet/bg-pattern-header.svg');
+    background-position: center center;
+  }
+}
+
+
+@media (max-width: 991.98px) {
+  .header { 
+    height: 160px;
+    background-image: url('../../public/assets/desktop/bg-pattern-header.svg');
+  }
+}
+
+
+@media (max-width: 1199.98px) {
+  .header { 
+    padding-left: 7%;
+    padding-right: 7%;
+    background-image: url('../../public/assets/desktop/bg-pattern-header.svg');
+  }
+}
+
+
+@media (min-width: 1200px) { 
+  .header { 
+    height: 160px;
+    background-image: url('../../public/assets/desktop/bg-pattern-header.svg');
+    background-position: center center;
+  }
+
+}

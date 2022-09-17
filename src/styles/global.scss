@@ -1,0 +1,84 @@
+@use './mixin.scss' as mixin;
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;300;400;700&display=swap');
+// $violet:  #5964E0;
+// $lightViolet: #939BF4;
+// $veryDarkBlue:  #19202D;
+// $midnight:  #121721;
+// $white:  #ffffff;
+// $lightgrey:  #F4F6F8;
+// $gray: #9DAEC2;
+// $darkgray: #6E8098;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+html {
+  height: 100% !important;
+}
+body {
+  margin: 0 auto;
+  font-family: mixin.$font-stack-1;
+  background-color: mixin.$lightgrey;
+}
+.link {
+  cursor: pointer;
+}
+
+.modal {
+  width: 100vw;
+  height: 140vh;
+  transform: translateY(-160px);
+  background-color: red;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background-color: mixin.$lightgrey;
+  padding-bottom: 100px;
+}
+.page.dark {
+  background-color: black;
+  transition: all .4s;
+}
+
+.homepage {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container {
+  margin: 0 auto;
+}
+
+.loadMore {
+  width: 100%;
+  text-align: center;
+  button {
+    width: 141px;
+    height: 48px;
+    background-color: mixin.$violet;
+    border: none;
+    border-radius: 5px;
+    font-family: mixin.$font-stack-1;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color:  mixin.$white;
+    transition: all .25s;
+    &:hover {
+      background-color: mixin.$lightViolet;
+      transform: scale(.98);
+      cursor: pointer;
+    }
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+ 
+}

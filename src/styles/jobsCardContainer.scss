@@ -1,0 +1,126 @@
+@use './mixin.scss' as mixin;
+
+// $violet:  #5964E0;
+// $lightViolet: #939BF4;
+// $veryDarkBlue:  #19202D;
+// $midnight:  #121721;
+// $white:  #ffffff;
+// $lightgrey:  #F4F6F8;
+// $gray: #9DAEC2;
+// $darkgray: #6E8098;
+
+.JobsCardContainer {
+  max-width: 94%;
+}
+
+.JobsCardContainer {
+  width: 100%;
+  padding: 0 24px 0 24px;
+  background-color: transparent;
+  .JobCard {
+    width: 100%;
+    height: 228px;
+    background-color: mixin.$white;
+    border-radius: 6px;
+    margin-bottom: 50px;
+    position: relative;
+    cursor: pointer;
+
+    .JobCard_logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      padding: 13px 5px;
+      object-fit: contain;
+      position: absolute;
+      left: 24px;
+      top: -24px;
+    }
+
+    .JobCard_container {
+      width: 100%;
+      height: 100%;
+      padding: 49px 32px 32px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      p {
+        margin-right: 12px;
+        font-family: mixin.$font-stack-1;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: mixin.$darkgray;
+      }
+
+      .JobCard_postedAt_contract {
+        display: flex;
+        margin-bottom: 10px;
+      }
+
+      .JobCard_position {
+        margin-bottom: 20px;
+        font-family: mixin.$font-stack-1;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+        color: mixin.$veryDarkBlue;
+      }
+
+      .JobCard_location {
+        font-family: mixin.$font-stack-1;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: mixin.$violet;
+      }
+    
+    }
+  } // end JobCard
+
+  .JobCard.dark {
+    background-color: mixin.$veryDarkBlue;
+    .JobCard_position {
+      color: mixin.$white;
+    }
+  } // end JobCard dark
+
+} // end JobsCardContainer
+
+
+
+
+@media (min-width: 768px) { 
+  .JobsCardContainer {
+    max-width: 92%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 12px;
+  }
+}
+
+@media (min-width: 991.98px) {
+  
+}
+
+@media (min-width: 1199.98px) {
+  .JobsCardContainer {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 18px;
+  }
+}
+
+@media (min-width: 1400px) { 
+  .JobsCardContainer {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+  }
+}
