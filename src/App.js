@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     setSwitchTheme(mq.matches)
-  }, [mq])
+  }, [])
 
   return (
     <div className="App">
