@@ -11,7 +11,7 @@ function JobsCardContainer({switchTheme, newPeople}) {
   const myView = newPeople.map((job) => {
     const {id, company, logo, logoBackground, position, postedAt, contract, location} = job
       return (
-        <div key={id+company} className={switchTheme ? 'JobCard container dark' : 'JobCard container'} onClick={() => moreDetailPage(job)}>
+        <div key={id+company+logoBackground} className={switchTheme ? 'JobCard container dark' : 'JobCard container'} onClick={() => moreDetailPage(job)}>
             <img className='JobCard_logo' style={{ backgroundColor: logoBackground }}  src={`.${logo}`} alt={company} />
             <div className='JobCard_container'>
               <div>

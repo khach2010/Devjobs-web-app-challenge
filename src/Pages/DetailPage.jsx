@@ -62,15 +62,15 @@ function DetailPage({switchTheme}) {
               <h4>Requirements</h4>
               <p>{requirements.content}</p>
               <ul>{requirements.items.map((item) => (
-                <li> <p>{item}</p></li>
+                <li key={company+item}> <p>{item}</p></li>
               ))}</ul>
             </div>
 
             <div className="detailPageContent-whatyouwilldo">
               <h4>What You Will Do</h4>
                 <p>{role.content}</p>
-                <ol>{role.items.map((item) => (
-                  <li> <p>{item}</p></li>
+                <ol>{role.items.map((item, id) => (
+                  <li key={id+company+item}> <p>{item}</p></li>
                 ))}</ol>
             </div>
           </div>

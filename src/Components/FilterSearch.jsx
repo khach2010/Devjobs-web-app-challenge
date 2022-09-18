@@ -71,7 +71,10 @@ function FilterSearch({switchTheme, handleSearch}) {
               </svg>
             </button>
 
-            <Modal open={open} onClose={onCloseModal} center>
+            <Modal open={open} onClose={onCloseModal} center  classNames={{
+                modal: switchTheme ? 'customModal-dark' : 'customModal-light',
+              }}>
+
               <div className={switchTheme ? 'filterSearch-location dark' : 'filterSearch-location'}>
                 <svg width="17" height="24" viewBox="0 0 17 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd" d="M8.44769 0C10.6804 0 12.7796 0.870546 14.3585 2.45105C17.2803 5.37556 17.6434 10.8781 15.1348 14.2255L8.44769 23.894L1.75056 14.2119C-0.748005 10.8781 -0.384902 5.37556 2.53692 2.45105C4.11574 0.870546 6.21459 0 8.44769 0ZM5.47356 8.29091C5.47356 9.97484 6.84271 11.3455 8.52484 11.3455C10.207 11.3455 11.5761 9.97484 11.5761 8.29091C11.5761 6.60698 10.207 5.23636 8.52484 5.23636C6.84271 5.23636 5.47356 6.60698 5.47356 8.29091Z" fill="#5964E0"/>
@@ -79,20 +82,21 @@ function FilterSearch({switchTheme, handleSearch}) {
                 <input value={locationSearch} type="text" placeholder='Filter by location…' 
                 onChange={(event) => setLocationSearch(event.target.value)}/>
               </div>
-              <div className={switchTheme ? 'special dark' : 'special'}>
-                <div className={switchTheme ? 'filterSearch-fulltime dark' : 'filterSearch-fulltime'}>
-                  <label className="filterSearch-fulltime-container">
-                    <input type="checkbox" value={fulltimeSearch}
-                    onChange={handleChange}/>
-                    <span className="checkmark"></span>
-                    {isTable ? 'Full Time' : 'Full Time Only'} 
-                  </label>    
-                </div>
-                <button type='submit' onClick={handleSubmit} >Search</button>
+            
+              <div className={switchTheme ? 'filterSearch-fulltime dark' : 'filterSearch-fulltime'}>
+                <label className="filterSearch-fulltime-container">
+                  <input type="checkbox" value={fulltimeSearch}
+                  onChange={handleChange}/>
+                  <span className="checkmark"></span>
+                  {isTable ? 'Full Time' : 'Full Time Only'} 
+                </label>    
               </div>
+              
+              <button type='submit' onClick={handleSubmit} >Search</button>
+             
             </Modal>
    
-            <button className='searchIcon'>
+            <button onClick={handleSubmit} className='searchIcon'>
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="48" height="48" rx="5" fill="#5964E0"/>
               <path fillRule="evenodd" clipRule="evenodd" d="M27.3533 26.549H28.2603L33.9529 32.2531L32.2531 33.9529L26.549 28.2603V27.359L26.2353 27.0453C24.9405 28.1576 23.2578 28.8307 21.4153 28.8307C17.3198 28.8307 14 25.5109 14 21.4153C14 17.3198 17.3198 14 21.4153 14C25.5109 14 28.8306 17.3198 28.8306 21.4153C28.8306 23.2578 28.1576 24.9405 27.0396 26.2353L27.3533 26.549ZM16.2817 21.4153C16.2817 24.2503 18.5804 26.549 21.4153 26.549C24.2503 26.549 26.549 24.2503 26.549 21.4153C26.549 18.5804 24.2503 16.2817 21.4153 16.2817C18.5804 16.2817 16.2817 18.5804 16.2817 21.4153Z" fill="white"/>

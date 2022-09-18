@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/header.scss'
 
 function Header({changeTheme, switchTheme}) {
- 
- 
  
   return (
     <div className={switchTheme ? 'header dark' : 'header'}>

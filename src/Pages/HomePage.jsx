@@ -42,7 +42,7 @@ function HomePage({switchTheme}) {
 
   useEffect(() => {
     getJobsData()
-  }, [])
+  })
 
   return (
     <>

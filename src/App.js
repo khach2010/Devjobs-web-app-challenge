@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Header from './Components/Header'
 import HomePage from './Pages/HomePage'
 import DetailPage from './Pages/DetailPage'
@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     setSwitchTheme(mq.matches)
-  }, [])
+  }, [mq])
 
   return (
     <div className="App">

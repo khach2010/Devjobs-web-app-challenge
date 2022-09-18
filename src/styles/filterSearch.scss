@@ -44,12 +44,9 @@
   }
   .filterSearch-location.dark {
     background-color: mixin.$veryDarkBlue;
-  }
-  .special {
-    height: 145px;
-  }
-  .special.dark {
-    background-color: mixin.$veryDarkBlue;
+    input {
+      color: mixin.$white;
+    }
   }
   .filterSearch-fulltime {
     display: flex;
@@ -173,6 +170,10 @@
     display: none;
   }
 }
+.react-responsive-modal-modal.customModal-dark {
+  background: mixin.$veryDarkBlue !important;
+}
+
 
 .filterSearch {
   max-width: 1150px;
