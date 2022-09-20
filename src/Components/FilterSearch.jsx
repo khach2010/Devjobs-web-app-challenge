@@ -56,6 +56,7 @@ function FilterSearch({switchTheme, handleSearch}) {
       setIsMobile(false)
       setIsTable(false)
   }
+  return window.addEventListener("resize", handleResize);
   },[])
   
   if(isMobile) {
