@@ -312,7 +312,7 @@
 .filterSearch.dark {
   background-color: mixin.$veryDarkBlue;
   transition: all .4s;
-  .filterSearch-title {
+  .filterSearch-title, .filterSearch-location {
     input {
       background-color: transparent;
       color: mixin.$white;
